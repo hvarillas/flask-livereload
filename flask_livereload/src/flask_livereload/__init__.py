@@ -11,7 +11,8 @@ class LiveReload:
     """
     This class is used to control the Flask-LiveReload extension.
     """
-    def __init__(self, app: Flask = None):
+    def __init__(self, app: Flask = None, ignore_patterns=None):
+        self.ignore_patterns = ignore_patterns
         if app is not None:
             self.init_app(app)
 
@@ -22,7 +23,7 @@ class LiveReload:
         if not app.debug:
             return
 
-        # More logic will be added here.
+        app.config.setdefault('LIVERELOAD_IGNORE_PATTERNS', self.ignore_patterns)
         app.extensions['livereload'] = self
 
         from .views import livereload_bp
