@@ -1,5 +1,7 @@
 import logging
 import queue
+import time
+
 from flask import Blueprint, Response, current_app
 
 logger = logging.getLogger(__name__)
@@ -17,6 +19,7 @@ def sse():
             while True:
                 try:
                     message = change_queue.get(timeout=30)
+                    time.sleep(0.2)
                     logger.debug(f"Sending SSE message: {message}")
                     yield f"data: {message}\n\n"
                 except queue.Empty:
