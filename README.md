@@ -13,21 +13,10 @@ Una extensión de Flask que proporciona recarga en vivo de las páginas web cuan
 
 ## 📦 Instalación
 
-Dado que este es un repositorio privado, necesitarás un Token de Acceso Personal (Personal Access Token - PAT) de GitHub para instalar el paquete. Asegúrate de que el token tenga el permiso `repo`.
-
-Una vez que tengas tu token, puedes instalar el paquete de la siguiente manera:
+Puedes instalar Flask-LiveReload directamente desde PyPI usando pip:
 
 ```bash
-pip install git+https://<TU_TOKEN>@github.com/hvarillas/flask-livereload.git
-```
-
-**Recomendación:**
-
-Para evitar exponer tu token, guárdalo en una variable de entorno y úsala durante la instalación:
-
-```bash
-export GITHUB_TOKEN="tu_token_aqui"
-pip install git+https://${GITHUB_TOKEN}@github.com/hvarillas/flask-livereload.git
+pip install Flask-LiveReload
 ```
 
 ## 🚀 Uso
