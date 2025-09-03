@@ -82,7 +82,7 @@ class _ChangeHandler(FileSystemEventHandler):
             return
 
         # For moved events, the destination path is what matters.
-        path = getattr(event, "dest_path", event.src_path)
+        path = event.src_path
 
         if self._is_watched(path):
             logger.info(
